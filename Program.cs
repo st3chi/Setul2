@@ -236,6 +236,45 @@ namespace Setul2
                     nr++;
             }
             Console.WriteLine(nr);
+            //nu am stiut sa il fac altfel
+        }
+
+        private static void p13()
+        {
+            int n = int.Parse(Console.ReadLine());
+            int p1 = int.Parse(Console.ReadLine());
+            int pr = p1;
+            int ok = 0;
+            bool rotita = false;
+
+            for (int i = 0; i < n - 1; i++)
+            {
+                int p2 = int.Parse(Console.ReadLine());
+                if (p2 < p1 && ok == 0)
+                {
+                    ok = 1;
+                }
+                else
+                if (p2 > p1 && ok == 0)
+                {
+                    rotita = true;
+                }
+                else
+                if (p2 > p1 && p2 < pr && ok == 1)
+                {
+                    rotita = true;
+                }
+                else
+                {
+                    rotita = false;
+                    break;
+                }
+                p1 = p2;
+            }
+            if (rotita == true)
+                Console.WriteLine("este secventa crescatoare rotita");
+            else 
+                Console.WriteLine("nu este secventa crescatoare rotita");
         }
 
         static void p17() 
